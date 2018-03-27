@@ -3,10 +3,12 @@ package repository;
 import com.sun.jmx.mbeanserver.Repository;
 import junit.framework.TestCase;
 import model.Product;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class StoreRepositoryTest extends TestCase {
 
@@ -18,11 +20,6 @@ public class StoreRepositoryTest extends TestCase {
         repository = new StoreRepository();
     }
 
-    public void testGetAllProducts() {
-    }
-
-    public void testReadFile() {
-    }
 
     public void testAddNewProduct() throws IOException {
         assertEquals(0,repository.getAllProducts().size());
@@ -148,18 +145,24 @@ public class StoreRepositoryTest extends TestCase {
     }
 
 
-
-
-
-
-
-
-    public void testGetProductsCategory() {
+    @Test
+    public void testGetProductsCategoryP2() throws IOException{
+        StoreRepository repository2 = new StoreRepository();
+        assertEquals(0,repository2.getAllProducts().size());
+        repository2.addNewProduct(new Product(55,"ciocolata1","aliment",2));
+        repository2.addNewProduct(new Product(56,"ciocolata2","aliment",2));
+        repository2.addNewProduct(new Product(57,"ciocolata3","aliment",2));
+        assertEquals(3,repository2.getAllProducts().size());
+        ArrayList<Product> product =repository2.getProductsCategory("ciocolata2");
+        assertEquals(0,product.size());
     }
 
-    public void testStockSituationProduct() {
+    @Test
+    public void testGetProductsCategoryP1() throws IOException{
+        StoreRepository repository2 = new StoreRepository();
+        assertEquals(0,repository2.getAllProducts().size());
+        ArrayList<Product> product =repository2.getProductsCategory("cioco");
+        assertEquals(0,product.size());
     }
 
-    public void testStockSituation() {
-    }
 }
