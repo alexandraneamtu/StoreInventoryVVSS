@@ -34,7 +34,7 @@ public class StoreRepository {
 
 	public String addNewProduct(Product p) throws IOException{
 		if(     p.getCode() > 0 &&
-                p.getQuantity() >= 0 &&
+                p.getQuantity() > 0 &&
                 !illegal(p.getName()) &&
                 p.getName().length() != 0 &&
                 p.getCategory().length() != 0)
