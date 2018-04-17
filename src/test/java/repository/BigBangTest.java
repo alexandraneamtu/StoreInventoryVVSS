@@ -1,6 +1,5 @@
 package repository;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import junit.framework.TestCase;
 import model.Product;
 import org.junit.Before;
