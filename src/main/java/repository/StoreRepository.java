@@ -93,7 +93,7 @@ public class StoreRepository {
 	public ArrayList<Product> stockSituationProduct(String pname){
 		ArrayList<Product> prods=new ArrayList<Product>();
 		for(Product p:allProducts)
-			if(p.getName().compareTo(pname) == 0)
+			if(p.getName().equals(pname))
 				prods.add(p);
 		return prods;
 	}

@@ -149,12 +149,12 @@ public class StoreRepositoryTest extends TestCase {
     public void testGetProductsCategoryP2() throws IOException{
         StoreRepository repository2 = new StoreRepository();
         assertEquals(0,repository2.getAllProducts().size());
-        repository2.addNewProduct(new Product(55,"ciocolata1","aliment",2));
-        repository2.addNewProduct(new Product(56,"ciocolata2","aliment",2));
-        repository2.addNewProduct(new Product(57,"ciocolata3","aliment",2));
+        repository2.addNewProduct(new Product(55,"ciocolata1","aliment1",2));
+        repository2.addNewProduct(new Product(56,"ciocolata2","aliment2",2));
+        repository2.addNewProduct(new Product(57,"ciocolata3","aliment3",2));
         assertEquals(3,repository2.getAllProducts().size());
-        ArrayList<Product> product =repository2.getProductsCategory("ciocolata2");
-        assertEquals(0,product.size());
+        ArrayList<Product> product =repository2.getProductsCategory("aliment2");
+        assertEquals(1,product.size());
     }
 
     @Test
