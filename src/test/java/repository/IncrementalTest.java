@@ -31,7 +31,7 @@ public class IncrementalTest extends TestCase{
 
 
     @Test
-    public void testRequirementsAandB() throws IOException{
+    public void testRequirementAandB() throws IOException{
         StoreRepository repository2 = new StoreRepository();
         assertEquals(0,repository2.getAllProducts().size());
         repository2.addNewProduct(new Product(55,"carne1","aliment1",2));
@@ -44,7 +44,7 @@ public class IncrementalTest extends TestCase{
 
 
     @Test
-    public void testRequirementsAandBandC() throws IOException{
+    public void testRequirementAandBandC() throws IOException{
         StoreRepository repository5 = new StoreRepository();
         assertEquals(0,repository5.getAllProducts().size());
         repository5.addNewProduct(new Product(65,"carne1","aliment1",2));
